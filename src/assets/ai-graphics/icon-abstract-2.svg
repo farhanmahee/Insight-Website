@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <defs>
-    <radialGradient id="r1" cx="50%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#ffb020"/>
-      <stop offset="100%" stop-color="#ff3b6f"/>
-    </radialGradient>
-  </defs>
-  <rect width="120" height="120" rx="20" fill="#081127"/>
-  <g transform="translate(12,12)" fill="url(#r1)">
-    <path d="M20 60c20-40 60-40 80 0v24H20z" opacity="0.95"/>
-    <circle cx="40" cy="36" r="10" fill-opacity="0.95"/>
-  </g>
-  <style>
-    /* subtle pulse */
-    @keyframes pulse { 0% { transform: scale(1) } 50% { transform: scale(1.04) } 100% { transform: scale(1) } }
-    svg { animation: pulse 8s ease-in-out infinite; transform-origin: center; }
-  </style>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" style="animation:pulse 8s ease-in-out infinite;transform-origin:center" viewBox="0 0 120 120"><defs><radialGradient id="r1" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#ffb020"/><stop offset="100%" stop-color="#ff3b6f"/></radialGradient></defs><rect width="120" height="120" fill="#081127" rx="20"/><g fill="url(#r1)" transform="translate(12 12)"><path d="M20 60c20-40 60-40 80 0v24H20z" opacity=".95"/><circle cx="40" cy="36" r="10" fill-opacity=".95"/></g><style>@keyframes pulse{0%,to{transform:scale(1)}50%{transform:scale(1.04)}}</style></svg>

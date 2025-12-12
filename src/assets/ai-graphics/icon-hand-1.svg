@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect width="120" height="120" rx="20" fill="#fff7ed" />
-  <g transform="translate(10,10)" stroke="#ff6b35" stroke-width="4" fill="none" class="hand-drawn">
-    <path d="M20 70c12-30 40-40 70-20" stroke-linecap="round" />
-    <circle cx="36" cy="36" r="9" fill="#ffca3a" stroke="none" />
-    <path d="M18 90c18-14 46-14 66 0" stroke-opacity="0.18" />
-  </g>
-  <style>
-    svg { transform-origin: center; }
-  </style>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" style="transform-origin:center" viewBox="0 0 120 120"><rect width="120" height="120" fill="#fff7ed" rx="20"/><g fill="none" stroke="#ff6b35" stroke-width="4" class="hand-drawn" transform="translate(10 10)"><path stroke-linecap="round" d="M20 70c12-30 40-40 70-20"/><circle cx="36" cy="36" r="9" fill="#ffca3a" stroke="none"/><path stroke-opacity=".18" d="M18 90c18-14 46-14 66 0"/></g></svg>
