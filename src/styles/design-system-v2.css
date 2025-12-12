@@ -1,0 +1,196 @@
+/* Premium Design System — Aura.build inspired */
+:root {
+  --fs-xxl: clamp(2.5rem, 5vw, 3.5rem);
+  --fs-xl: clamp(1.75rem, 3.5vw, 2.5rem);
+  --fs-lg: clamp(1.125rem, 1.8vw, 1.375rem);
+  --container: 1200px;
+  --radius: 20px;
+  --transition-fast: 200ms cubic-bezier(0.22, 1.2, 0.3, 1);
+  --transition-normal: 400ms cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* Color Variants */
+.variant-modern {
+  --bg-1: linear-gradient(135deg, #0f172a 0%, #031026 60%);
+  --accent: #7dd3fc;
+  --accent-2: #a78bfa;
+  --muted: rgba(255, 255, 255, 0.75);
+  --surface: rgba(15, 23, 42, 0.5);
+}
+
+.variant-minimal {
+  --bg-1: linear-gradient(135deg, #ffffff 0%, #f8fafc 60%);
+  --accent: #0ea5a4;
+  --accent-2: #334155;
+  --muted: rgba(17, 24, 39, 0.8);
+  --surface: rgba(255, 255, 255, 0.8);
+  color: #111827;
+}
+
+.variant-contrast {
+  --bg-1: linear-gradient(135deg, #000000 0%, #0b1220 60%);
+  --accent: #ffb020;
+  --accent-2: #ff3b6f;
+  --muted: rgba(255, 255, 255, 0.9);
+  --surface: rgba(0, 0, 0, 0.7);
+}
+
+.variant-warm-playful {
+  --bg-1: linear-gradient(135deg, #fff7ed 0%, #fff1e0 60%);
+  --accent: #ff6b35;
+  --accent-2: #ffca3a;
+  --muted: rgba(17, 24, 39, 0.8);
+  --surface: rgba(255, 255, 255, 0.9);
+  color: #071124;
+}
+
+.variant-modern,
+.variant-minimal,
+.variant-contrast,
+.variant-warm-playful {
+  background: var(--bg-1);
+}
+
+/* Global Typography */
+h1, h2, h3, h4 {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--fs-xxl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+p, li { font-size: var(--fs-lg); color: var(--muted); line-height: 1.6; }
+
+/* Cards & Surfaces */
+.card {
+  background: linear-gradient(135deg, var(--surface), rgba(255, 255, 255, 0.01));
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+/* Premium Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 0.95rem 1.4rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-fast);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left var(--transition-fast);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Subtle Animations */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(8px, -8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(125, 211, 252, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(125, 211, 252, 0.5); }
+}
+
+.float {
+  animation: float 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+.glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Reduced Motion Support */
+html.reduced-motion .float,
+html.reduced-motion .pulse-soft,
+html.reduced-motion .glow,
+html.reduced-motion .animate-blob,
+html.reduced-motion [class*="animation"],
+html.reduced-motion [class*="animate"] {
+  animation: none !important;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+  h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+  
+  .card { padding: 1.25rem; }
+  .btn-primary { padding: 0.8rem 1.2rem; font-size: 0.95rem; }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --fs-xxl: 1.75rem;
+    --fs-xl: 1.25rem;
+  }
+  
+  .design-switcher { width: calc(100% - 2rem); left: 1rem; right: 1rem; }
+}
+
+/* Design notes */
+#design-notes {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
