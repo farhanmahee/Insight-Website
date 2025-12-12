@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,6 +13,25 @@ import './styles/design-system.css';
 
 function App() {
   const [variant, setVariant] = useState('variant-modern');
+  useEffect(() => {
+    try {
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection || null;
+      const lowMemory = navigator.deviceMemory && navigator.deviceMemory < 2;
+      const slowCpu = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 1;
+      const saveData = connection && connection.saveData;
+      const effectiveType = connection && connection.effectiveType ? connection.effectiveType : '';
+      const slowNetwork = /2g|slow-2g/.test(effectiveType);
+
+      if (prefersReduced || lowMemory || slowCpu || saveData || slowNetwork) {
+        document.documentElement.classList.add('reduced-motion');
+      } else {
+        document.documentElement.classList.remove('reduced-motion');
+      }
+    } catch (e) {
+      // defensive: don't block rendering if any API unavailable
+    }
+  }, []);
   return (
     <div className={`${variant} min-h-screen text-white overflow-hidden`}>
       {/* Fixed background elements */}

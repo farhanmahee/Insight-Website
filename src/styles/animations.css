@@ -1,0 +1,130 @@
+/* Premium Motion Elements — Performance Optimized */
+
+/* Smooth entrance animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Micro-interactions */
+@keyframes hover-lift {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes subtle-glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes icon-rotate {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+/* Entrance animation classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Stagger animations (for lists) */
+.animate-stagger > * {
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.animate-stagger > :nth-child(1) { animation-delay: 0.1s; }
+.animate-stagger > :nth-child(2) { animation-delay: 0.2s; }
+.animate-stagger > :nth-child(3) { animation-delay: 0.3s; }
+.animate-stagger > :nth-child(4) { animation-delay: 0.4s; }
+.animate-stagger > :nth-child(5) { animation-delay: 0.5s; }
+
+/* Interactive hover states */
+.group:hover .icon-hover {
+  animation: icon-rotate 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.group:hover .glow-hover {
+  animation: subtle-glow 0.6s ease-in-out;
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Disable animations on low-end devices (set by JavaScript) */
+html.reduced-motion *[class*="animate"],
+html.reduced-motion [class*="animation"],
+html.reduced-motion .group:hover .icon-hover,
+html.reduced-motion .group:hover .glow-hover {
+  animation: none !important;
+}

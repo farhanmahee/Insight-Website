@@ -13,10 +13,10 @@ function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 px-6">
       {/* Background banner */}
-      <img src={Banner} alt="Data flow banner" className="absolute inset-0 w-full h-full object-cover opacity-90 pointer-events-none -z-10" />
+      <img src={Banner} alt="Data flow banner" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-90 pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto w-full text-center">
-        <img src={HeroIll} alt="Illustration" className="pointer-events-none absolute right-6 top-24 w-1/2 opacity-60 hidden lg:block" />
+        <img src={HeroIll} alt="Illustration" loading="lazy" decoding="async" className="pointer-events-none absolute right-6 top-24 w-1/2 opacity-60 hidden lg:block" />
         <div className="space-y-8 animate-fadeInUp">
           <div className="inline-block">
             <span className="px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white/80 text-sm font-semibold backdrop-blur-xl hover:bg-white/20 hover:border-white/40 transition-all duration-300">
