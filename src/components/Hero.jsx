@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
-import Banner from '../assets/banner.svg';
+import Banner from '../assets/insight-cover.png';
 import HeroIll from '../assets/ai-graphics/hero-illustration.svg';
 import Hand1 from '../assets/ai-graphics/icon-hand-1.svg';
 import Hand2 from '../assets/ai-graphics/icon-hand-2.svg';
@@ -13,7 +13,7 @@ function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 px-6">
       {/* Background banner */}
-      <img src={Banner} alt="Data flow banner" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-90 pointer-events-none -z-10" />
+      <img src={Banner} alt="Insight Cover" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none -z-10 blur-sm" />
 
       <div className="max-w-7xl mx-auto w-full text-center">
         <img src={HeroIll} alt="Illustration" loading="lazy" decoding="async" className="pointer-events-none absolute right-6 top-24 w-1/2 opacity-60 hidden lg:block" />

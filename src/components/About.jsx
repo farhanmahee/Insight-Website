@@ -1,6 +1,8 @@
 import React from 'react';
 import { Users, Lightbulb, Award } from 'lucide-react';
 
+import FounderImg from '../assets/founder-mahee.jpg';
+
 function About() {
   return (
     <section id="about" className="py-24 px-6">
@@ -20,9 +22,7 @@ function About() {
           <div className="animate-fadeInLeft">
             <div className="group p-8 rounded-3xl bg-slate-900/50 backdrop-blur-xl border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-600/20">
               <div className="flex items-start space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  SI
-                </div>
+                <img src={FounderImg} alt="Sadiul Islam Mahee" className="w-20 h-20 rounded-full object-cover border-2 border-white/20 group-hover:border-blue-500 transition-colors duration-300 shadow-lg" />
                 <div>
                   <h3 className="text-2xl font-bold text-white">Sadiul Islam (Mahee)</h3>
                   <p className="text-blue-400 font-semibold mt-1">Founder & CEO</p>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Menu, X, Calendar } from 'lucide-react';
 
+import Logo from '../assets/insight-logo.jpg';
+
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,10 +25,8 @@ function Header() {
           className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity duration-300 group"
           onClick={() => scrollToSection('home')}
         >
-          <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
-            <span className="text-white font-bold text-xl">I</span>
-          </div>
-          <span className="hidden sm:inline font-bold text-xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Insight ERP</span>
+          <img src={Logo} alt="Insight ERP Logo" className="h-10 w-auto rounded-lg" />
+          <span className="hidden sm:inline font-bold text-xl text-white">Insight ERP</span>
         </div>
 
         {/* Desktop Menu */}
@@ -120,7 +120,7 @@ function Header() {
         )}
       </nav>
 
-      <style jsx>{`
+      <style>{`
         @keyframes fadeIn {
           from {
             opacity: 0;

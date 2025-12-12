@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Features from './components/Features';
+import FinancialDashboard from './components/FinancialDashboard';
 import Statistics from './components/Statistics';
 import Delivery from './components/Delivery';
 import Comparison from './components/Comparison';
@@ -51,7 +51,7 @@ function App() {
         <DesignSwitcher variant={variant} setVariant={setVariant} />
         <Hero />
         <About />
-        <Features />
+        <FinancialDashboard />
         <Statistics />
         <Delivery />
         <Comparison />
@@ -59,7 +59,7 @@ function App() {
         <Footer />
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes blob {
           0%, 100% { transform: translate(0, 0) scale(1); }
           33% { transform: translate(30px, -50px) scale(1.1); }
