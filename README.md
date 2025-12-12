@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fd77b941-18ea-4c8a-a9f1-b857e8da9088/deploy-status)](https://app.netlify.com/projects/insightinnovators/deploys)
+
 # Insight Innovators Website
 
 Enterprise Automation, SaaS & ERP Systems - Professional Business Solutions
