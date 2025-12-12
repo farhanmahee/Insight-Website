@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="20" fill="#fff7ed" />
+  <g transform="translate(10,10)" stroke="#ff6b35" stroke-width="4" fill="none" class="hand-drawn">
+    <path d="M20 70c12-30 40-40 70-20" stroke-linecap="round" />
+    <circle cx="36" cy="36" r="9" fill="#ffca3a" stroke="none" />
+    <path d="M18 90c18-14 46-14 66 0" stroke-opacity="0.18" />
+  </g>
+  <style>
+    svg { transform-origin: center; }
+  </style>
+</svg>

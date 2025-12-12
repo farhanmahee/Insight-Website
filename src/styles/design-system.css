@@ -1,0 +1,101 @@
+/* Design system with three variants and responsive typography */
+:root {
+  --fs-xxl: clamp(2rem, 4vw, 3rem);
+  --fs-xl: clamp(1.5rem, 3vw, 2rem);
+  --fs-lg: clamp(1.125rem, 1.6vw, 1.25rem);
+  --container: 1200px;
+  --radius: 18px;
+}
+
+.variant-modern {
+  --bg-1: linear-gradient(135deg,#0f172a 0%, #031026 60%);
+  --accent: #7dd3fc;
+  --accent-2: #a78bfa;
+  --muted: rgba(255,255,255,0.7);
+}
+
+.variant-minimal {
+  --bg-1: linear-gradient(135deg,#ffffff 0%, #f8fafc 60%);
+  --accent: #0ea5a4;
+  --accent-2: #334155;
+  --muted: rgba(17,24,39,0.75);
+  color: #111827;
+}
+
+.variant-contrast {
+  --bg-1: linear-gradient(135deg,#000000 0%, #0b1220 60%);
+  --accent: #ffb020;
+  --accent-2: #ff3b6f;
+  --muted: rgba(255,255,255,0.85);
+}
+
+.variant-warm-playful {
+  --bg-1: linear-gradient(135deg,#fff7ed 0%, #fff1e0 60%);
+  --accent: #ff6b35;
+  --accent-2: #ffca3a;
+  --muted: rgba(17,24,39,0.75);
+  color: #071124;
+}
+
+.variant-modern, .variant-minimal, .variant-contrast, .variant-warm-playful {
+  background: var(--bg-1);
+}
+
+/* Global containers and typography */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+h1 { font-size: var(--fs-xxl); }
+h2 { font-size: var(--fs-xl); }
+p, li { font-size: var(--fs-lg); color: var(--muted); }
+
+/* Cards and surfaces */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: calc(var(--radius) + 6px);
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.18);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white; padding: .85rem 1.1rem; border-radius: 999px; display: inline-block;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  transition: transform 220ms cubic-bezier(.22,1.2,.3,1), box-shadow 220ms;
+}
+
+/* Playful bouncy micro-interaction on hover/focus */
+.btn-primary.bouncy:hover, .btn-primary.bouncy:focus {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+  animation: pop 420ms cubic-bezier(.2,.9,.3,1);
+}
+@keyframes pop { 0% { transform: translateY(0) scale(1); } 60% { transform: translateY(-8px) scale(1.03); } 100% { transform: translateY(-6px) scale(1.02); } }
+
+/* Subtle motion: will be disabled if .reduced-motion is present on html */
+
+@keyframes floatY { 0% {transform: translateY(0)} 50% {transform: translateY(-8px)} 100% {transform: translateY(0)} }
+.float { animation: floatY 6s ease-in-out infinite; }
+
+/* Hand-drawn / sketchy styles for icons */
+.hand-drawn { filter: drop-shadow(0 8px 20px rgba(0,0,0,0.08)); stroke-linecap: round; stroke-linejoin: round; }
+
+/* Slightly subtler animations for the playful variant */
+.variant-warm-playful .animate-fadeInUp { animation-duration: 0.6s; }
+.variant-warm-playful .animate-blob { animation-duration: 10s; opacity: 0.5; }
+
+html.reduced-motion .float, html.reduced-motion .animate-blob { animation: none !important; }
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  h1 { font-size: 1.75rem; }
+  .design-switcher { right: 1rem; left: 1rem; }
+}
+
+/* Design notes anchor */
+#design-notes { position: fixed; bottom: 1rem; left: 1rem; opacity: 0.9; background: rgba(0,0,0,0.35); padding: .5rem .75rem; border-radius: 8px; }
